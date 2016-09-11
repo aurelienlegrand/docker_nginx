@@ -6,9 +6,13 @@ Testing docker and nginx.
 ## Usage
 
 First build the docker image based on the dockerfile: `docker build -t nginx_img .`
+
 Then launch a new container based on this image: `docker run -d nginx_img`
+
 You can also use this syntax to forward all traffic on port 8080 to your container on port 80: `docker run -d -p 8080:80 nginx_img`
+
 Check that your container is running: `docker ps -a`
+
 Test your webpage: `curl [container_IP]` (use the script docker_get_ip.sh to get the container IP with your container ID)
 
 ## Done
