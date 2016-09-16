@@ -24,14 +24,23 @@ Create haproxy container with configuration attached with a volume :
 
 Reload the haproxy configuration: `docker kill -s HUP <container_d>`
 
+# Docker remote API
+
+Use the setup/setup_docker.sh script to set up your environment and the Docker Remote API.
+
+After setup, use `docker -H tcp://127.0.0.1:2375 ps` or ` curl -X GET http://127.0.0.1:2375/images/json` to test the API. 
+
 ## Done
 
     * First version of a working nginx instance
+    * First version of a working haproxy instance
+    * Simple Docker Remote API configuration (not secure)
 
 ## TODO
 
     * Handle user for nginx (currently using root)
     * Copy static web content to change the landing page
     * Spawn ha-proxy instances and load balance to these nginx instances
+    * Secure Docker Remote API configuration with TLS
     * ha-proxy high availability configuration
     * Auto scale nginx instances creation based on requests seen by ha-proxy
