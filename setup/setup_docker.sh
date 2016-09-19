@@ -8,8 +8,8 @@ sudo apt-get install -y bc
 
 if [ `echo $kernel_version'<'3.1 | bc -l` -eq 1 ]
 then
-	echo "Linux kernel version > 3.10 is required to install docker"
-	exit 1
+    echo "Linux kernel version > 3.10 is required to install docker"
+    exit 1
 fi
 
 sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D

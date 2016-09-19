@@ -30,6 +30,12 @@ Use the setup/setup_docker.sh script to set up your environment and the Docker R
 
 After setup, use `docker -H tcp://127.0.0.1:2375 ps` or ` curl -X GET http://127.0.0.1:2375/images/json` to test the API. 
 
+## Tests
+
+Install python and pip if you have not already done it.
+Install pytest: `pip install pytest` and run `pytest tests/test.py`
+
+
 ## Done
 
     * First version of a working nginx instance
