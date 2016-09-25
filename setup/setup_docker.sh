@@ -28,3 +28,6 @@ sudo systemctl start docker
 # Allow the user to use docker without sudo, but system needs to be rebooted
 sudo usermod -aG docker $(whoami)
 
+# Accept traffic on port TCP/5000 for the API 
+sudo iptables -A INPUT -p tcp --dport 5000 -j ACCEPT
+
