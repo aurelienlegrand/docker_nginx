@@ -7,3 +7,4 @@ include/
 __pycache__/
 *.cache
 *.tmp
+*.pyc

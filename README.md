@@ -3,9 +3,14 @@ docker_nginx
 
 Testing docker and nginx.
 
-## Usage
+# Usage
 
-# Nginx
+## Setup
+Use the scripts in the setup folder to setup your environment (tested on Ubuntu 16.04LTS).
+
+Use pip install -r requirements.txt to install python libraries.
+
+## Nginx
 
 First build the docker image based on the dockerfile: `docker build -t nginx_img .`
 
@@ -17,32 +22,33 @@ Check that your container is running: `docker ps -a`
 
 Test your webpage: `curl <container_IP>` (use the script docker_get_ip.sh to get the container IP with your container ID)
 
-# Haproxy
+## Haproxy
 
 Create haproxy container with configuration attached with a volume :
 `docker run -d -p 8080:80 -v $PWD/haproxy/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro haproxy`
 
 Reload the haproxy configuration: `docker kill -s HUP <container_d>`
 
-# Docker remote API
+## Docker remote API
 
 Use the setup/setup_docker.sh script to set up your environment and the Docker Remote API.
 
 After setup, use `docker -H tcp://127.0.0.1:2375 ps` or ` curl -X GET http://127.0.0.1:2375/images/json` to test the API. 
 
-## Tests
+# Tests
 
-Install python and pip if you have not already done it.
-Install pytest: `pip install pytest` and run `pytest tests/test.py`
+Install python, pip and the python requirements if you have not already done it.
+Run `pytest tests/test.py`
 
 
-## Done
+# Done
 
     * First version of a working nginx instance
     * First version of a working haproxy instance
     * Simple Docker Remote API configuration (not secure)
+    * First version of an API that will communicate with Docker Remote API
 
-## TODO
+# TODO
 
     * Handle user for nginx (currently using root)
     * Copy static web content to change the landing page
@@ -50,3 +56,4 @@ Install pytest: `pip install pytest` and run `pytest tests/test.py`
     * Secure Docker Remote API configuration with TLS
     * ha-proxy high availability configuration
     * Auto scale nginx instances creation based on requests seen by ha-proxy
+    * Python API to communicate with Docker Remote API
