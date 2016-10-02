@@ -1,3 +1,5 @@
+from flask.json import JSONEncoder
+
 class Node:
     """Defines a Node (webserver or load balancer"""
 
@@ -8,3 +10,16 @@ class Node:
 
     def to_json(self):
         return("'node_id': '" + self.node_id + "', 'image': '" + self.image + "', ip_addr: '" + self.ip_addr + "'")
+
+
+class NodeJSONEncoder(JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, Node):
+            return {
+                'node_id'     : obj.node_id,
+                'image'     : obj.image,
+                'ip_addr'     : obj.ip_addr
+            }
+        print("TEST")
+        return super(JSONEncoder, self).default(obj)
+
