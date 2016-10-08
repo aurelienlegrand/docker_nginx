@@ -35,7 +35,14 @@ Use the setup/setup_docker.sh script to set up your environment and the Docker R
 
 After setup, use `docker -H tcp://127.0.0.1:2375 ps` or ` curl -X GET http://127.0.0.1:2375/images/json` to test the API. 
 
-# Tests
+## Python API
+
+The goal of the Python API is to help you provision easily webservers containers. Launch the api with `python api.py`
+
+Documentation is still work in progress but accessible at `localhost:5000/api/spec.json` when the API is running.
+
+
+Tests
 
 Install python, pip and the python requirements if you have not already done it.
 Run `pytest tests/test.py`
