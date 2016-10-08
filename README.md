@@ -41,8 +41,7 @@ The goal of the Python API is to help you provision easily webservers containers
 
 Documentation is still work in progress but accessible at `localhost:5000/api/spec.json` when the API is running.
 
-
-Tests
+## Tests
 
 Install python, pip and the python requirements if you have not already done it.
 Run `pytest tests/test.py`
@@ -53,7 +52,7 @@ Run `pytest tests/test.py`
     * First version of a working nginx instance
     * First version of a working haproxy instance
     * Simple Docker Remote API configuration (not secure)
-    * First version of an API that will communicate with Docker Remote API
+    * First version of an API that communicate with Docker Remote API
 
 # TODO
 
@@ -63,4 +62,3 @@ Run `pytest tests/test.py`
     * Secure Docker Remote API configuration with TLS
     * ha-proxy high availability configuration
     * Auto scale nginx instances creation based on requests seen by ha-proxy
-    * Python API to communicate with Docker Remote API

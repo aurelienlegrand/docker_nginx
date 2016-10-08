@@ -73,7 +73,7 @@ class WebserverList(Resource):
         update_containers()
         return containers.values()
 
-api.add_resource(Webserver, '/webserver/', '/webserver/<string:node_id>')
+api.add_resource(Webserver, '/webserver/create', '/webserver/<string:node_id>')
 api.add_resource(WebserverList, '/webservers')
 api.representations.update({
     'application/json': node_json_output
