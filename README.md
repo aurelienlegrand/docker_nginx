@@ -44,7 +44,7 @@ Documentation is still work in progress but accessible at `localhost:5000/api/sp
 ## Tests
 
 Install python, pip and the python requirements if you have not already done it.
-Run `pytest tests/test.py`
+Run `python3 -m pytest test.py` to run the tests using python 3.
 
 
 # Done
