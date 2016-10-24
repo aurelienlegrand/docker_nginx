@@ -3,7 +3,9 @@ from flask_restful import (Resource, abort, Api)
 from flask_restful_swagger import swagger
 import requests
 import json
-from resources.node import (Node, NodeJSONEncoder)
+from resources.node import Node
+from resources.application import Application
+from resources.customJSONEncoder import CustomJSONEncoder
 
 app = Flask(__name__)
 
@@ -34,7 +36,7 @@ def new_node(image):
         r_start = requests.post('http://' + docker_host + ':2375/containers/' + node_id + '/start')
 
 def node_json_output(data, code, headers=None):
-    dumped = json.dumps(data, cls=NodeJSONEncoder)
+    dumped = json.dumps(data, cls=CustomJSONEncoder)
     resp = make_response(dumped, code)
     resp.headers.extend(headers or {})
     return resp
