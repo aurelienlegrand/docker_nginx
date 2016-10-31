@@ -13,7 +13,9 @@ class CustomJSONEncoder(JSONEncoder):
 	if isinstance(obj, Application):
 	    return {
 	    	'name' : obj.name,
-                'nb_nodes' : obj.nb_nodes
-	    }
+                'nb_nodes' : obj.nb_nodes,
+	        'threshold' : obj.threshold,
+                'ratio' : obj.ratio
+            }
         return super(JSONEncoder, self).default(obj)
 

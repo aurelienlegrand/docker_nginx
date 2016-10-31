@@ -41,6 +41,11 @@ The goal of the Python API is to help you provision easily webservers containers
 
 Documentation is still work in progress but accessible at `localhost:5000/api/spec.json` when the API is running.
 
+Examples of curl requests to test the Python API:
+  * Get the list of webservers: `curl localhost:5000/webservers`
+  * Create a new webserver: `curl localhost:5000/webserver/create -d "image=nginx" -X PUT`
+  * Create a new application: `curl localhost:5000/application/create -d "name=test_app&nb_nodes=2&threshold=10&ratio=2" -X PUT` 
+
 ## Tests
 
 Install python, pip and the python requirements if you have not already done it.
